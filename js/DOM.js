@@ -19,3 +19,10 @@ const DOM = {
       .replace(/'/g, "&#039;");
   }
 }
+
+if (!CSS.supports('aspect-ratio', '1/1')) {
+  DOM.boardDiv.style.width = window.innerWidth;
+  DOM.boardDiv.style.height = window.innerHeight;
+
+  console.log('a');
+}

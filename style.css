@@ -98,7 +98,7 @@ main .content {
   display: none; /* grid */
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   gap: 20px;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
   background-color: #d2d3d4;
 }
 
@@ -106,13 +106,19 @@ main .content {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
   border: none;
   background-color: #fff;
   font-weight: 700;
   font-size: 4em;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  #board, #board .box {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 #board .box:hover {
