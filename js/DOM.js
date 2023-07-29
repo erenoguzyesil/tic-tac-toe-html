@@ -21,8 +21,10 @@ const DOM = {
 }
 
 if (!CSS.supports('aspect-ratio', '1/1')) {
-  DOM.boardDiv.style.width = window.innerWidth + 'px';
-  DOM.boardDiv.style.height = window.innerHeight + 'px';
+  let width = window.innerWidth + 'px';
+
+  DOM.boardDiv.style.width = width;
+  DOM.boardDiv.style.height = width;
 
   console.log('a');
 }
