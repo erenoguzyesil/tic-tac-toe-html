@@ -117,6 +117,10 @@ main {
   cursor: pointer;
 }
 
+#board .box.highlighted {
+  background-color: #000;
+}
+
 #board .box.x {
   color: #d40303;
 }

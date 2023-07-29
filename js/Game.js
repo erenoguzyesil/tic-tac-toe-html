@@ -3,9 +3,8 @@ const Game = {
 
   clearBoard: function () {
     for (let box of DOM.boardBoxes) {
-      box.classList.remove('x', 'o');
+      box.classList.remove('x', 'o', 'highlighted');
       box.innerHTML = '';
-      box.style.backgroundColor = '#fff';
     }
   },
 
@@ -78,7 +77,7 @@ const Game = {
 
     if (winnerExists) {
       for (let index of positions)
-        DOM.boardBoxes[index].style.backgroundColor = 'black';
+        DOM.boardBoxes[index].classList.add('highlighted');
 
       return true;
     }
