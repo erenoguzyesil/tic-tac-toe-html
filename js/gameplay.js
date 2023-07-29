@@ -18,7 +18,7 @@ for (let button of DOM.markSelectionButtons) {
     DOM.boardDiv.style.display = 'grid';
 
     DOM.turnIndicator.style.display = 'block';
-    DOM.turnIndicator.innerHTML = "<b>It's your turn! Press on one of the empty boxes in the board below to place your mark (" + markOf.player + ').</b>';
+    DOM.turnIndicator.innerHTML = "<b>It's your turn! Press on one of the empty boxes in the board above to place your mark (" + markOf.player + ').</b>';
   });
 }
 

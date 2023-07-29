@@ -18,31 +18,31 @@
 
 <body>
   <main>
-    <h1>Play Tic-Tac-Toe!</h1>
-
-    <div id="pre-game-menu">
-      <div class="field">
-        <p>Choose your mark to start: </p>
-
-        <div class="mark-selection">
-          <button id="x-button">X</button>
-          <button id="o-button">O</button>
+    <div class="content">
+      <div id="pre-game-menu">
+        <div class="field">
+          <p>Choose your mark to start: </p>
+  
+          <div class="mark-selection">
+            <button id="x-button">X</button>
+            <button id="o-button">O</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="turn-indicator"></div>
-    <div id="winner">
-      <div id="winner-indicator"></div>
-      <button id="play-again">Play again</button>
-    </div>
-
-    <div id="board">
-      <button class="box" id="1"></button> <button class="box" id="2"></button> <button class="box" id="3"></button>
-      <button class="box" id="4"></button> <button class="box" id="5"></button> <button class="box" id="6"></button>
-      <button class="box" id="7"></button> <button class="box" id="8"></button> <button class="box" id="9"></button>
+  
+      <div id="board">
+        <button class="box" id="1"></button> <button class="box" id="2"></button> <button class="box" id="3"></button>
+        <button class="box" id="4"></button> <button class="box" id="5"></button> <button class="box" id="6"></button>
+        <button class="box" id="7"></button> <button class="box" id="8"></button> <button class="box" id="9"></button>
+      </div>
     </div>
   </main>
+
+  <div id="turn-indicator" class="bottom-modal"></div>
+  <div id="winner" class="bottom-modal" style="display: none;">
+    <div id="winner-indicator"></div>
+    <button id="play-again">Play again</button>
+  </div>
 
   <script src="js/DOM.js"></script>
   <script src="js/Board.js"></script>

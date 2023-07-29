@@ -32,8 +32,15 @@ button {
 }
 
 main {
-  max-width: 600px;
-  margin: 10vmin auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+main .content {
+  width: 100%;
+  max-width: 500px;
   padding: 25px;
 }
 
@@ -52,7 +59,6 @@ main {
   margin-top: 0;
   font-weight: 600;
 }
-
 
 #pre-game-menu .mark-selection {
   display: flex;
@@ -88,17 +94,8 @@ main {
   background-color: #f9fbff;
 }
 
-#turn-indicator,
-#winner {
-  display: none;
-  margin: 25px 0;
-  padding: 25px;
-  border: 2px solid #d2d3d4;
-  border-radius: 5px;
-}
-
 #board {
-  display: none;
+  display: none; /* grid */
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   gap: 20px;
   aspect-ratio: 1 / 1;
@@ -107,18 +104,19 @@ main {
 
 #board .box {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
   border: none;
   background-color: #fff;
-  font-size: 6em;
   font-weight: 700;
-  transition: background-color 0.3s;
+  font-size: 4em;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-#board .box.highlighted {
-  background-color: #000;
+#board .box:hover {
+  background-color: #edeff0;
 }
 
 #board .box.x {
@@ -129,8 +127,26 @@ main {
   color: #035ad4;
 }
 
-#board .box:hover {
-  background-color: #e5e7e9;
+#board .box.highlighted {
+  background-color: #000;
+  color: #fff;
+}
+
+.bottom-modal {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  max-width: 600px;
+}
+
+#turn-indicator, #winner {
+  display: none;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #edeff0;
+  border-radius: 5px;
+  width: calc(100% - 40px);
 }
 
 #winner {
@@ -150,17 +166,13 @@ main {
   border: none;
   background-color: transparent;
   color: #002afb;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: underline;
-}
-
-#play-again:hover {
-  text-decoration: none;
 }
 
 @media only screen and (max-width: 480px) {
   #board .box {
-    font-size: 2em;
+    font-size: 3em;
   }
 
   #winner {
