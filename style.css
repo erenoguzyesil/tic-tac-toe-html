@@ -1,0 +1,166 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
+
+main {
+  max-width: 600px;
+  margin: 10vmin auto;
+  padding: 25px;
+}
+
+#pre-game-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  padding: 2em;
+  border: 2px solid #d2d3d4;
+  border-radius: 5px;
+  color: #000;
+}
+
+#pre-game-menu p {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+
+#pre-game-menu .mark-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#pre-game-menu .mark-selection button {
+  width: 100%;
+  padding: 4px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#pre-game-menu .mark-selection #x-button {
+  color: #d40303;
+  border-bottom: 4px solid #d40303;
+}
+
+#pre-game-menu .mark-selection #o-button {
+  color: #035ad4;
+  border-bottom: 4px solid #035ad4;
+}
+
+#pre-game-menu .mark-selection #x-button:hover {
+  background-color: #fffafa;
+}
+
+#pre-game-menu .mark-selection #o-button:hover {
+  background-color: #f9fbff;
+}
+
+#turn-indicator,
+#winner {
+  display: none;
+  margin: 25px 0;
+  padding: 25px;
+  border: 2px solid #d2d3d4;
+  border-radius: 5px;
+}
+
+#board {
+  display: none;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  gap: 20px;
+  aspect-ratio: 1 / 1;
+  background-color: #d2d3d4;
+}
+
+#board .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #fff;
+  font-size: 6em;
+  font-weight: 700;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+#board .box.x {
+  color: #d40303;
+}
+
+#board .box.o {
+  color: #035ad4;
+}
+
+#board .box:hover {
+  background-color: #e5e7e9;
+}
+
+#winner {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#winner.player-won {
+  border: 2px solid green;
+}
+
+#winner.player-lost {
+  border: 2px solid red;
+}
+
+#play-again {
+  border: none;
+  background-color: transparent;
+  color: #002afb;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#play-again:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  #board .box {
+    font-size: 2em;
+  }
+
+  #winner {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
